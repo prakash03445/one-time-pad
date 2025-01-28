@@ -15,10 +15,10 @@ Follow these steps to build and run the project:
    cd build
    cmake ..
 
-1. ****:
+3. **Build the executable**
    ```bash
-   mkdir build
+   make
 
-1. **Create a build directory**:
+4. **Run the program**:
    ```bash
-   mkdir build
+   ./encrypt <file to encrypt>
