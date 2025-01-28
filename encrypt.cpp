@@ -20,8 +20,22 @@ int main(int argc, char* argv[]) {
     }
 
     std::ifstream file(argv[1], std::ios::binary);
+    if (!file.is_open()) {
+        std::cerr << "Can't open the file.\n";
+        return 1;
+    } 
+
     std::ofstream encrypted_file("crypt.out", std::ios::binary);
+    if (!encrypted_file.is_open()) {
+        std::cerr << "Can't open crypt.out file.\n";
+        return 1;
+    }
+
     std::ofstream key_file("key.out", std::ios::binary);
+    if (!key_file.is_open()) {
+        std::cerr << "Can't open the key.out file.\n";
+        return 1;
+    }
 
     encrypt(file, encrypted_file, key_file);
 
